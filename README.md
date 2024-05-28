@@ -1,18 +1,40 @@
-## Getting Started
+# Desafio Poo
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este é um repositório dedicado à realização do desafio proposto em [***DIO - Trilha Java Básico > Desafio POO***](https://github.com/digitalinnovationone/trilha-java-basico/tree/main/desafios/poo), relacionado à Programação Orientada a Objetos.
 
-## Folder Structure
+Abaixo é possível conferir o diagrama em UML feito a partir do Mermaid, que visa estabelecer uma lógica para a programação de um arquivo .java referente às funcionalidades requisitadas.
 
-The workspace contains two folders by default, where:
+```mermaid
+classDiagram
+    class ReprodutorMusical{
+        <<interface>>
+        +String[] listaMusicas
+        +tocarMusica()
+        +pausarMusica()
+        +selecionarMusica(String[] listaMusicas)
+    }
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    class AparelhoTelefonico {
+        <<interface>>
+        +boolean mensagensCorreioVoz
+        +receberLigacao()
+        +atender()
+        +ligar(String numero)
+        +iniciarCorreioVoz(boolean mensagensCorrioVoz)
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    class NavegadorInternet {
+        <<interface>>
+        String url
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    class iPhone {
+    }
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    ReprodutorMusical --|> iPhone : implements
+    AparelhoTelefonico --|> iPhone : implements
+    NavegadorInternet --|> iPhone : implements
+```
